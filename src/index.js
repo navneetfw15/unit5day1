@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import  "../src/index.css" 
+import  "../src/index.js" 
+import logo from "../images/navneet.jpg"
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+let image = document.createElement("img");
+image.setAttribute("class","photo");
+image.src = logo;
+document.querySelector("#logo").append(image);
+
+document.querySelector("form").addEventListener("submit", show);
+
+function show(event){
+    event.preventDefault();
+
+    let text = document.getElementById("note").value
+    // console.log(text);
+    let para = document.createElement("p");
+    para.textContent = "";
+    para.textContent = text;
+
+    document.getElementById("para").append(para);
+
+}
